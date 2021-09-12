@@ -27,4 +27,4 @@ Derivar uma key a partir do Id do Usuário faz com que o processo de geração d
 
 O uso de uma chave individualizada faz com que o OTP gerado para um determinado cliente só seja validado se for com uma solicitação relacionada àquele usuário
 
-É necessário ter uma gestão segura do arquivo que contém a Master Key
+É necessário ter uma gestão segura do arquivo que contém a Master Key.
