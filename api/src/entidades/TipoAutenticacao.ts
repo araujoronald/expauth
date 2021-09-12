@@ -1,0 +1,6 @@
+export enum TipoAutenticacao {
+  SENHA = "SENHA",
+  CODIGO_ACESSO = "CODIGO_ACESSO",
+  FACE = "FACE",
+  SENHA_CODIGO_ACESSO = "SENHA_CODIGO_ACESSO",
+}

@@ -1,0 +1,16 @@
+cron:
+- description: "Cron MANHA"
+  url: /auth/notificacao/MANHA
+  schedule: every day 10:00
+  timezone: America/Sao_Paulo
+  target: api
+- description: "Cron TARDE"
+  url: /auth/notificacao/TARDE
+  schedule: every day 16:00
+  timezone: America/Sao_Paulo
+  target: api
+#- description: "Cron NOITE"
+#  url: /auth/notificacao/NOITE
+#  schedule: every day 21:00
+#  timezone: America/Sao_Paulo
+#  target: api

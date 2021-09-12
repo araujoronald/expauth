@@ -1,0 +1,39 @@
+version: "2.4"
+services:
+  api:
+    depends_on:
+      - postgresdb
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    volumes:
+      - /app/node_modules
+      - ./api:/app
+    ports:
+      - 3000:3000
+    environment:
+      - DB_HOST=postgresdb
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=1234
+      - DB_NAME=expauth
+      - DB_SCHEMA=public
+      - DB_DIALECT=postgres
+      - DB_LOGGING=false
+      - OTP_MASTER_KEY=${OTP_MASTER_KEY}
+      - OTP_VALIDADE_SEGUNDOS=300
+      - MAXIMO_TENTATIVAS_ACESSO=5
+      - NODE_PORT=3000
+      - LINK_ACESSO=https://expauth.com.br/:link
+
+  postgresdb:
+    image: postgres:13
+    restart: always
+    volumes:
+      - /psqldata4:/var/lib/postgresql/data
+      - ./scripts-db/:/docker-entrypoint-initdb.d/
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234

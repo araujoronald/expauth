@@ -1,0 +1,12 @@
+runtime: nodejs14
+service: default
+handlers:
+- url: /(.*\..+)$ 
+  static_files: dist/\1
+  upload: dist/(.*\..+)$
+- url: /.*
+  static_files: dist/index.html
+  upload: dist/index.html
+
+env_variables:
+  URL_BACKEND: https://api-dot-uauth-323213.rj.r.appspot.com/auth
