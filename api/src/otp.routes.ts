@@ -6,6 +6,7 @@ import { verificarNuloOuVazio } from './Util'
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
+const messageServerID = process.env.TWILIO_MSID;
 const twilioNumber = `+${process.env.TWILIO_NUMBER}`;
 const twilioClient = require('twilio')(accountSid, authToken);
 
@@ -32,9 +33,9 @@ router.get("/auth/otp/:idUsuario/:cpf", async (req: Request, res: Response) => {
 
     twilioClient.messages.create({
       body: `${otp} é o seu código de acesso. Experimento uAUTH`,
-      messagingServiceSid: 'MGefc432236437f8d2eef4fac2fa2d4800',
+      messagingServiceSid: messageServerID,
       to: `+55${usuario.celular}`
-    }).then(message => console.log('Código de acesso enviado: ' + message.sid)).done();
+    }).then(message => console.log('> Código de acesso enviado: ' + message.sid)).done();
     
     return res.status(204).send()
     
