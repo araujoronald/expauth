@@ -1,4 +1,4 @@
-![Alt text](/docs/uAUTH-png.png?raw=true "uAUTH")
+<img src="https://github.com/araujoronald/uauth/blob/master/docs/uAUTH-png.png" width="300" />
 
 # uAUTH Experimento
 
