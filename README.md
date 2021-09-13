@@ -1,3 +1,5 @@
+![Alt text](/docs/uAUTH-png.png?raw=true "uAUTH")
+
 # uAUTH Experimento
 
 uAUTH é um experimento que visa investigar o comportamento dos usuários finais quando deparados com diferentes métodos de autenticação. 
