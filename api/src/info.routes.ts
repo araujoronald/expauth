@@ -12,7 +12,7 @@ const autenticacaoRepos = new AutenticacaoRepositorio()
 const usuarioRepos = new UsuarioRepositorio()
 const router = Router()
 
-router.get('/auth', (req: Request, res: Response) => {
+router.get('/auth/hello', (req: Request, res: Response) => {
   return res.status(200).send([{ "message": "Olá! Este é um experimento de autenticação!" }])
 })
 
